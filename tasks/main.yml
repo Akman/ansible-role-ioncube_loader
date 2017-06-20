@@ -1,0 +1,48 @@
+---
+# tasks/main.yml
+
+- name: Include platform specific variables
+  include_vars: "{{ ansible_os_family }}.yml"
+
+- name: Define php_extension_conf_paths
+  set_fact:
+    php_extension_conf_paths: "{{ __php_extension_conf_paths }}"
+  when: php_extension_conf_paths is not defined
+  
+- name: Define php_ioncube_loader_module_path
+  set_fact:
+    php_ioncube_loader_module_path: "{{ __php_ioncube_loader_module_path }}"
+  when: php_ioncube_loader_module_path is not defined
+
+- name: Define php_ioncube_loader_module_filename
+  set_fact:
+    php_ioncube_loader_module_filename: "{{ __php_ioncube_loader_module_filename }}"
+  when: php_ioncube_loader_module_filename is not defined
+
+- name: Define php_ioncube_loader_config_filename
+  set_fact:
+    php_ioncube_loader_config_filename: "{{ __php_ioncube_loader_config_filename }}"
+  when: php_ioncube_loader_config_filename is not defined
+
+- name: Download and untar ioncube-loader
+  unarchive:
+    src: "http://downloads3.ioncube.com/loader_downloads/ioncube_loaders_lin_x86-64.tar.gz"
+    dest: "{{ workspace }}"
+    creates: "{{ workspace }}/ioncube"
+    copy: no
+
+- name: Ensure ioncube-loader module path exists
+  file:
+    path: "{{ php_ioncube_loader_module_path }}"
+    state: directory
+    owner: root
+    group: root
+    mode: 0755
+
+- name: Move ioncube-loader module into place
+  copy:
+    src: "{{ workspace }}/ioncube/{{ php_ioncube_loader_module_filename }}"
+    dest: "{{ php_ioncube_loader_module_path }}/{{ php_ioncube_loader_module_filename }}"
+    remote_src: true
+
+- include: configure.yml

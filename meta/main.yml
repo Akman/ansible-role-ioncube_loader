@@ -1,0 +1,22 @@
+---
+# meta/main.yml
+
+dependencies: []
+
+galaxy_info:
+  author: Akman
+  description: IonCube Loader for Linux
+  license: "license (MIT)"
+  min_ansible_version: 2.2
+  platforms:
+    - name: Ubuntu
+      versions:
+        - precise
+        - raring
+        - saucy
+        - trusty
+        - xenial
+  galaxy_tags:
+    - server
+
+allow_duplicates: yes
