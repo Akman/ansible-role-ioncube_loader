@@ -45,4 +45,4 @@
     dest: "{{ php_ioncube_loader_module_path }}/{{ php_ioncube_loader_module_filename }}"
     remote_src: true
 
-- include: configure.yml
+- import_tasks: configure.yml
