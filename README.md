@@ -12,13 +12,14 @@ Available variables are listed below, along with default values:
 
     workspace: /root
     
-    php_ioncube_loader_module_path: /usr/lib/php5/modules
-    php_ioncube_loader_module_filename: ioncube_loader_lin_7.0.so
-    php_ioncube_loader_config_filename: 10-ioncube.ini
+    php_version: '7.1'
+    php_ioncube_loader_module_path: "/usr/lib/php5/modules"
+    php_ioncube_loader_module_filename: "ioncube_loader_lin_{{ php_version }}.so"
+    php_ioncube_loader_config_filename: "10-ioncube.ini"
     php_extension_conf_paths:
-      - /etc/php/7.0/fpm/conf.d
-      - /etc/php/7.0/apache2/conf.d
-      - /etc/php/7.0/cli/conf.d
+      - "/etc/php/{{ php_version }}/fpm/conf.d"
+      - "/etc/php/{{ php_version }}/apache2/conf.d"
+      - "/etc/php/{{ php_version }}/cli/conf.d"
 
 ## Dependencies
 
@@ -33,14 +34,7 @@ None.
 *Inside `vars/main.yml`*:
 
     workspace: /root
-    
-    php_ioncube_loader_module_path: /usr/lib/php5/modules
-    php_ioncube_loader_module_filename: ioncube_loader_lin_7.0.so
-    php_ioncube_loader_config_filename: 10-ioncube.ini
-    php_extension_conf_paths:
-      - /etc/php/7.0/fpm/conf.d
-      - /etc/php/7.0/apache2/conf.d
-      - /etc/php/7.0/cli/conf.d
+    php_version: '7.2'
 
 ## License
 
