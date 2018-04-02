@@ -16,6 +16,10 @@ galaxy_info:
         - saucy
         - trusty
         - xenial
+    - name: EL
+      versions:
+        - 7
+
   galaxy_tags:
     - server
 

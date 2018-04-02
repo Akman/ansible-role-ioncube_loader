@@ -7,6 +7,4 @@
     group: root
     mode: 0644
   with_items: "{{ php_extension_conf_paths }}"
-  notify:
-    - restart webserver
-    - restart php-fpm
+  notify: "{{ handlers }}"
