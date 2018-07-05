@@ -13,3 +13,6 @@ __php_extension_conf_paths:
   - "/etc/php/{{ __php_version }}/fpm/conf.d"
   - "/etc/php/{{ __php_version }}/apache2/conf.d"
   - "/etc/php/{{ __php_version }}/cli/conf.d"
+handlers:
+  - restart webserver
+  - restart php-fpm

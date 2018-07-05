@@ -35,8 +35,8 @@
   file:
     path: "{{ php_ioncube_loader_module_path }}"
     state: directory
-    owner: root
-    group: root
+    owner: "{{ php_ioncube_user }}"
+    group: "{{ php_ioncube_user }}"
     mode: 0755
 
 - name: Move ioncube-loader module into place

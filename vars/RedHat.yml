@@ -1,0 +1,19 @@
+---
+# vars/RedHat.yml
+
+__php_version: "{{ php_version | default('7.1') }}"
+
+__php_ioncube_loader_module_path: "/usr/lib64/php/{{ php_version }}/modules"
+
+__php_ioncube_loader_module_filename: "ioncube_loader_lin_{{ __php_version }}.so"
+
+__php_ioncube_loader_config_filename: 10-ioncube.ini
+
+__php_extension_conf_paths:
+  - "/etc/php/{{ __php_version }}/fpm/conf.d"
+  - "/etc/php{{ __php_version | regex_replace('\\.','') }}"
+  - "/etc/php/{{ __php_version }}/cli/conf.d"
+
+handlers:
+  - restart webserver
+  - restart php-fpm
