@@ -1,6 +1,6 @@
-# Ansible Role: ioncube-loader
+# Ansible Role: ioncube_loader
 
-Installs Ioncube-loader on Linux.
+Installs Ioncube loader on Linux.
 
 ## Requirements
 
@@ -31,7 +31,7 @@ None.
 
     - hosts: all
       roles:
-        - akman.ioncube-loader
+        - akman.ioncube_loader
 
 *Inside `vars/main.yml`*:
 
