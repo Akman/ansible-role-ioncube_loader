@@ -4,6 +4,7 @@
 dependencies: []
 
 galaxy_info:
+  role_name: ioncube_loader
   author: Akman
   description: IonCube Loader for Linux
   license: "license (MIT)"
