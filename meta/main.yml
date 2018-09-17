@@ -1,7 +1,8 @@
 ---
 # meta/main.yml
 
-dependencies: []
+dependencies:
+  - geerlingguy.php
 
 galaxy_info:
   role_name: ioncube_loader

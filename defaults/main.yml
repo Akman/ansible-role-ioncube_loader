@@ -1,5 +1,7 @@
 ---
 # defaults/main.yml
+
 php_ioncube_user: root
 php_ioncube_group: root
+
 workspace: /root
