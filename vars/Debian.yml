@@ -3,7 +3,7 @@
 
 __php_version: "{{ php_version | default('7.2') }}"
 
-__php_ioncube_loader_module_path: "/usr/lib/php/{{ php_version }}/modules"
+__php_ioncube_loader_module_path: "/usr/lib/php/{{ __php_version }}/modules"
 
 __php_ioncube_loader_module_filename: "ioncube_loader_lin_{{ __php_version }}.so"
 
